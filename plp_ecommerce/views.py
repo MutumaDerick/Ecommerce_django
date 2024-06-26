@@ -8,3 +8,6 @@ def product_list(request):
         'products': products
     }
     return render(request,'plp_ecommerce/product_list.html',context)
+
+def product_details(request):
+    pass
