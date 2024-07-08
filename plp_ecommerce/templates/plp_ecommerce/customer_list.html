@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Customer List</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  
+</head>
+<body>
+  <h1>Customer List</h1>
+  <ul>
+    {% for customer in customers %}
+    <li>
+        <a href="{% url 'customer_detail' customer.pk%}">{{ 'customer.first_name'}}{{ 'customer.last_name'}}{{ 'email'}}</a>
+    </li>
+    {% endfor %}
+  </ul>
+  {% comment %} <a href="{% url 'customer_detail'%}" class="back_link">Back to Customer Details</a> {% endcomment %}
+</body>
+</html>
