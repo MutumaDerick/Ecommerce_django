@@ -21,12 +21,17 @@ def customer_list(request):
     context = {
         'customers': customers
     }
-    return render(request, 'plp_ecommerce/customer_list.html', context)
+    return render(request, 'plp_ecommerce/customer_list.html', {'customers':customers})
 
 def customer_detail(request, pk):
     customer = get_list_or_404(Customer, pk=pk)
     context = {
         'customer': customer
     }
-    return render(request,'plp_ecommerce/customer_detail.html', context)
+    return render(request,'plp_ecommerce/customer_detail.html', {'customer': customer})
+
+
+def plp_ecommerce(request):
+    return render(request, 'plp_ecommerce.html')
+
     
